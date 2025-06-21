@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projecten - GedoptGardening</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <img src="assets/logo.png" alt="Jouw Logo" class="logo" />
+      <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="projecten">
+        <h1>Onze Projecten</h1>
+
+        <div class="projecten-grid">
+          <div class="project">
+            <h2>Project 1</h2>
+            <div class="slideshow">
+              <button class="prev" onclick="prevSlide(0)">&#10094;</button>
+              <img
+                src="assets/project1-1.jpg"
+                class="slide"
+                alt="Project 1 - Foto 1"
+              />
+              <img
+                src="assets/project1-2.jpg"
+                class="slide hidden"
+                alt="Project 1 - Foto 2"
+              />
+              <img
+                src="assets/project1-3.jpg"
+                class="slide hidden"
+                alt="Project 1 - Foto 3"
+              />
+              <button class="next" onclick="nextSlide(0)">&#10095;</button>
+            </div>
+            <p>Korte beschrijving van project 1.</p>
+          </div>
+
+          <div class="project">
+            <h2>Project 2</h2>
+            <div class="slideshow">
+              <button class="prev" onclick="prevSlide(1)">&#10094;</button>
+              <img
+                src="assets/project2-1.jpg"
+                class="slide"
+                alt="Project 2 - Foto 1"
+              />
+              <img
+                src="assets/project2-2.jpg"
+                class="slide hidden"
+                alt="Project 2 - Foto 2"
+              />
+              <button class="next" onclick="nextSlide(1)">&#10095;</button>
+            </div>
+            <p>Korte beschrijving van project 2.</p>
+          </div>
+
+          <div class="project">
+            <h2>Project 3</h2>
+            <div class="slideshow">
+              <button class="prev" onclick="prevSlide(2)">&#10094;</button>
+              <img
+                src="assets/project3-1.jpg"
+                class="slide"
+                alt="Project 3 - Foto 1"
+              />
+              <img
+                src="assets/project3-2.jpg"
+                class="slide hidden"
+                alt="Project 3 - Foto 2"
+              />
+              <button class="next" onclick="nextSlide(2)">&#10095;</button>
+            </div>
+            <p>Korte beschrijving van project 3.</p>
+          </div>
+
+          <div class="project">
+            <h2>Project 4</h2>
+            <div class="slideshow">
+              <button class="prev" onclick="prevSlide(3)">&#10094;</button>
+              <img
+                src="assets/project4-1.jpg"
+                class="slide"
+                alt="Project 4 - Foto 1"
+              />
+              <img
+                src="assets/project4-2.jpg"
+                class="slide hidden"
+                alt="Project 4 - Foto 2"
+              />
+              <button class="next" onclick="nextSlide(3)">&#10095;</button>
+            </div>
+            <p>Korte beschrijving van project 4.</p>
+          </div>
+
+          <div class="project">
+            <h2>Project 5</h2>
+            <div class="slideshow">
+              <button class="prev" onclick="prevSlide(4)">&#10094;</button>
+              <img
+                src="assets/project5-1.jpg"
+                class="slide"
+                alt="Project 5 - Foto 1"
+              />
+              <img
+                src="assets/project5-2.jpg"
+                class="slide hidden"
+                alt="Project 5 - Foto 2"
+              />
+              <button class="next" onclick="nextSlide(4)">&#10095;</button>
+            </div>
+            <p>Korte beschrijving van project 5.</p>
+          </div>
+
+          <div class="project">
+            <h2>Project 6</h2>
+            <div class="slideshow">
+              <button class="prev" onclick="prevSlide(5)">&#10094;</button>
+              <img
+                  src="assets/project6-1.jpg"
+                  class="slide"
+                  alt="Project 6 - Foto 1"
+                />
+                <img
+                  src="assets/project6-2.jpg"
+                  class="slide hidden"
+                  alt="Project 6 - Foto 2"
+                />
+                <img
+                  src="assets/project6-3.jpg"
+                  class="slide hidden"
+                  alt="Project 6 - Foto 3"
+                />
+              <button class="next" onclick="nextSlide(5)">&#10095;</button>
+            </div>
+            <p>Korte beschrijving van project 6.</p>
+          </div>
+        
+        </div> 
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-section">
+        <h3>Navigatie</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contactgegevens</h3>
+        <p>
+          <span>&#9742;</span>
+          <a href="tel:+32468315901" class="phone-link">0468 31 59 01</a>
+        </p>
+        <p>
+          <span>&#9993;</span>
+          <a href="mailto:Gedopt.Gardening@gmail.com" class="email-link"
+            >Gedopt.Gardening@gmail.com</a
+          >
+        </p>
+      </div>
+      <div class="footer-section">
+        <h3>Volg ons</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/gedoptgardening"
+            ><img src="assets/facebook.png" alt="Facebook"
+          /></a>
+          <a href="https://www.instagram.com/gedopt_gardening._/"
+            ><img src="assets/instagram.png" alt="Instagram"
+          /></a>
+          <a href="#"><img src="assets/linkedin.png" alt="LinkedIn" /></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 GedoptGardening. Alle rechten voorbehouden.</p>
+      </div>
+      <div class="grass"></div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
