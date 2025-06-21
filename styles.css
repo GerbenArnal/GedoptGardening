@@ -751,6 +751,10 @@ main {
     .text-content {
         padding: 40px;
     }
+
+    .menu-toggle {
+        display: none;
+    }
 }
 
 /* from projecten.component.css */
