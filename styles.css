@@ -59,10 +59,6 @@ header {
     align-items: center;
     text-align: center;
     position: relative;
-    background-image: url('assets/bus.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 200px; /* Geef de header voldoende hoogte om de afbeelding te tonen */
 }
 
 /* Donkere overlay voor betere leesbaarheid */
@@ -893,6 +889,7 @@ main {
     font-size: 24px;
     color: #fff;
     z-index: 3;
+    transform: translateZ(0);
   }
 
   nav {
@@ -927,4 +924,4 @@ main {
 .footer {
   background-color: #333;
   color: #fff;
-} 
+}
