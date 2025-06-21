@@ -200,6 +200,10 @@ nav ul li:hover::after {
     nav ul li a:hover {
         color: #cccccc;
     }
+
+    .menu-toggle {
+        display: none;
+    }
 }
 
 main {
