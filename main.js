@@ -67,4 +67,95 @@ document.addEventListener('DOMContentLoaded', () => {
       mainNav.classList.toggle('active');
     });
   }
+});
+
+// LIGHTBOX FUNCTIONALITEIT VOOR PROJECTFOTO'S
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Verzamel alle project slideshows
+  const projectSlideshows = document.querySelectorAll('.project');
+  const lightboxOverlay = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+
+  let currentProjectIndex = null;
+  let currentSlideIndex = null;
+
+  // Klik op een projectfoto opent de lightbox
+  projectSlideshows.forEach((project, projectIndex) => {
+    const slides = project.querySelectorAll('.slide');
+    slides.forEach((slide, slideIndex) => {
+      slide.style.cursor = 'pointer';
+      slide.addEventListener('click', function() {
+        openLightbox(projectIndex, slideIndex);
+      });
+    });
+  });
+
+  function openLightbox(projectIndex, slideIndex) {
+    currentProjectIndex = projectIndex;
+    currentSlideIndex = slideIndex;
+    updateLightboxImage();
+    lightboxOverlay.classList.add('active');
+    lightboxOverlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightboxOverlay.classList.remove('active');
+    lightboxOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxImage() {
+    const project = document.querySelectorAll('.project')[currentProjectIndex];
+    const slides = project.querySelectorAll('.slide');
+    if (slides.length === 0) return;
+    lightboxImg.src = slides[currentSlideIndex].src;
+    lightboxImg.alt = slides[currentSlideIndex].alt || '';
+  }
+
+  function showNextLightboxSlide() {
+    const project = document.querySelectorAll('.project')[currentProjectIndex];
+    const slides = project.querySelectorAll('.slide');
+    if (slides.length === 0) return;
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+    updateLightboxImage();
+  }
+
+  function showPrevLightboxSlide() {
+    const project = document.querySelectorAll('.project')[currentProjectIndex];
+    const slides = project.querySelectorAll('.slide');
+    if (slides.length === 0) return;
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    updateLightboxImage();
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxOverlay.addEventListener('click', function(e) {
+    if (e.target === lightboxOverlay) closeLightbox();
+  });
+  lightboxNext.addEventListener('click', function(e) {
+    e.stopPropagation();
+    showNextLightboxSlide();
+  });
+  lightboxPrev.addEventListener('click', function(e) {
+    e.stopPropagation();
+    showPrevLightboxSlide();
+  });
+
+  // Sluiten met Escape
+  document.addEventListener('keydown', function(e) {
+    if (lightboxOverlay.classList.contains('active') && (e.key === 'Escape' || e.key === 'Esc')) {
+      closeLightbox();
+    }
+    if (lightboxOverlay.classList.contains('active') && (e.key === 'ArrowRight')) {
+      showNextLightboxSlide();
+    }
+    if (lightboxOverlay.classList.contains('active') && (e.key === 'ArrowLeft')) {
+      showPrevLightboxSlide();
+    }
+  });
 }); 
